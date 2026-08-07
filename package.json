@@ -1,0 +1,16 @@
+{
+  "name": "workfit",
+  "version": "1.0.0",
+  "description": "AI Workout and Meal Planner",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.16.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2"
+  }
+}

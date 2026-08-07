@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WorkFit AI Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="container">
+
+        <h1>WorkFit AI</h1>
+
+        <nav>
+    <a href="#planner">Planner</a>
+    <a href="#about">About</a>
+
+   <button id="darkModeBtn" class="theme-toggle" aria-label="Toggle dark mode">
+    🌙
+</button>
+</nav>
+
+    </div>
+
+</header>
+
+
+
+<section class="hero">
+
+    <div class="container">
+
+        <h2>Your AI Fitness Coach</h2>
+
+        <p>
+            Generate a personalized workout and meal plan based on your goals,
+            schedule, and lifestyle.
+        </p>
+
+
+        <button id="scrollButton">
+            Create My Plan
+        </button>
+
+    </div>
+
+</section>
+
+
+
+
+<section id="planner">
+
+    <div class="container">
+
+        <h2>Create Your Fitness Plan</h2>
+
+
+        <form id="planForm">
+
+
+            <input 
+                id="age"
+                type="number"
+                placeholder="Age"
+                required
+            >
+
+
+            <input
+                id="height"
+                type="number"
+                placeholder="Height (inches)"
+                required
+            >
+
+
+            <input
+                id="weight"
+                type="number"
+                placeholder="Weight (lbs)"
+                required
+            >
+
+
+            <select id="sex" required>
+
+                <option value="">
+                    Select Sex
+                </option>
+
+                <option value="Male">
+                    Male
+                </option>
+
+                <option value="Female">
+                    Female
+                </option>
+
+            </select>
+
+
+
+            <input
+                id="goal"
+                type="text"
+                placeholder="Fitness Goal (lose weight, build muscle, etc.)"
+                required
+            >
+
+
+
+            <textarea
+                id="schedule"
+                placeholder="Describe your weekly schedule..."
+                required
+            ></textarea>
+
+
+
+            <button type="submit">
+                Generate My Plan
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+</section>
+
+
+
+
+<section id="result">
+
+    <div class="container">
+
+        <h2>Your AI Plan</h2>
+
+
+        <div id="output">
+            Your personalized plan will appear here...
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+
+<section id="about">
+
+    <div class="container">
+
+        <h2>About WorkFit</h2>
+
+        <p>
+            WorkFit is an AI-powered fitness planner that creates
+            personalized workout routines and meal plans based on your
+            goals, schedule, and lifestyle.
+        </p>
+
+        <br>
+
+        <p>
+            Whether you're trying to lose weight, build muscle, gain
+            strength, or improve your overall health, WorkFit helps you
+            stay consistent with a realistic plan made for you.
+        </p>
+
+        <br>
+
+        <p>
+            Our mission is to make fitness easier and more accessible by
+            using artificial intelligence to provide guidance, structure,
+            and motivation for your fitness journey.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+<footer>
+
+    <p>
+        © 2026 WorkFit AI
+    </p>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
