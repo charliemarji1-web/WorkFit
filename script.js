@@ -53,7 +53,7 @@ form.addEventListener("submit", async (event) => {
     try {
 
         const response = await fetch(
-            "http://localhost:3000/generate-plan",
+    "https://workfit-0qd7.onrender.com/generate-plan",
             {
 
                 method: "POST",
