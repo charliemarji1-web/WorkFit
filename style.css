@@ -1,4 +1,36 @@
-/* Reset */
+/* ==============================
+   WORKFIT VARIABLES
+================================= */
+
+:root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --text: #333333;
+    --text-muted: #64748b;
+    --accent: #2563eb;
+    --accent-light: #1d4ed8;
+    --header-bg: #0f172a;
+}
+
+
+/* ==============================
+   DARK MODE
+================================= */
+
+body.dark {
+    --bg: #15151c;
+    --surface: #211f2b;
+    --text: #e8e8ee;
+    --text-muted: #a8a8b8;
+    --accent: #a8ff60;
+    --accent-light: #c8ff9b;
+    --header-bg: #15151c;
+}
+
+
+/* ==============================
+   RESET
+================================= */
 
 * {
     margin: 0;
@@ -7,154 +39,156 @@
 }
 
 
-/* Body */
+/* ==============================
+   BODY
+================================= */
 
 body {
-
     font-family: Arial, Helvetica, sans-serif;
 
-    background: linear-gradient(
-        135deg,
-        #eff6ff,
-        #f8fafc
-    );
-
-    color: #333;
+    background: var(--bg);
+    color: var(--text);
 
     line-height: 1.6;
 
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 
-/* Container */
+/* ==============================
+   CONTAINER
+================================= */
 
 .container {
-
     width: 90%;
-
     max-width: 1200px;
-
     margin: auto;
-
 }
 
 
-
-/* Header */
+/* ==============================
+   HEADER
+================================= */
 
 header {
-
-    background: #0f172a;
-
+    background: var(--header-bg);
     color: white;
 
-    padding: 20px 0;
+    padding: 15px 0;
 
     position: sticky;
-
     top: 0;
 
-    z-index: 10;
+    z-index: 100;
 
+    transition:
+        background-color 0.3s ease;
 }
 
 
 header .container {
-
     display: flex;
 
     justify-content: space-between;
+    align-items: center;
+}
 
+
+.logo {
+    display: flex;
     align-items: center;
 
+    text-decoration: none;
 }
 
 
-header h1 {
+.logo img {
+    width: 150px;
+    height: auto;
 
-    font-size: 32px;
-
-    font-weight: bold;
-
+    display: block;
 }
 
 
+/* ==============================
+   NAVIGATION
+================================= */
 
 nav {
-
     display: flex;
 
-    gap: 25px;
+    gap: 22px;
 
+    align-items: center;
 }
 
 
 nav a {
-
     color: white;
 
     text-decoration: none;
 
     font-weight: bold;
 
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
 
 nav a:hover {
+    color: var(--accent);
 
-    color: #60a5fa;
-
+    transform: translateY(-2px);
 }
 
 
-
-/* Hero */
+/* ==============================
+   HERO
+================================= */
 
 .hero {
-
     padding: 100px 20px;
 
     text-align: center;
 
-    background: white;
+    background: var(--surface);
 
+    transition:
+        background-color 0.3s ease;
 }
 
 
 .hero h2 {
-
     font-size: 52px;
 
     margin-bottom: 20px;
 
-    color: #0f172a;
-
+    color: var(--text);
 }
 
 
 .hero p {
-
     max-width: 700px;
 
-    margin: auto;
+    margin: 0 auto 35px auto;
 
-    margin-bottom: 35px;
-
-    color: #64748b;
+    color: var(--text-muted);
 
     font-size: 18px;
-
 }
 
 
-
-/* Buttons */
+/* ==============================
+   BUTTONS
+================================= */
 
 button {
+    background: var(--accent);
 
-    background: #2563eb;
-
-    color: white;
+    color: var(--bg);
 
     border: none;
 
@@ -166,59 +200,81 @@ button {
 
     font-size: 17px;
 
-    transition: 0.3s;
+    font-weight: bold;
 
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        opacity 0.3s ease;
 }
 
 
 button:hover {
-
-    background: #1d4ed8;
+    background: var(--accent-light);
 
     transform: translateY(-3px);
-
 }
 
 
+button:disabled {
+    opacity: 0.6;
 
-/* Sections */
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* ==============================
+   SECTIONS
+================================= */
 
 section {
-
     padding: 70px 0;
-
 }
 
 
 section h2 {
-
     text-align: center;
 
     margin-bottom: 40px;
 
     font-size: 35px;
 
-    color: #0f172a;
-
+    color: var(--text);
 }
 
 
+section p {
+    max-width: 850px;
 
-/* Form */
+    margin: auto;
+
+    text-align: center;
+
+    color: var(--text-muted);
+
+    font-size: 17px;
+}
+
+
+/* ==============================
+   FORM
+================================= */
 
 form {
-
     max-width: 700px;
 
     margin: auto;
 
-    background: white;
+    background: var(--surface);
 
     padding: 35px;
 
     border-radius: 20px;
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
 
     display: flex;
 
@@ -226,13 +282,19 @@ form {
 
     gap: 18px;
 
+    transition:
+        background-color 0.3s ease;
 }
 
 
+/* ==============================
+   INPUTS
+================================= */
 
 input,
 select,
 textarea {
+    width: 100%;
 
     padding: 15px;
 
@@ -244,72 +306,373 @@ textarea {
 
     outline: none;
 
+    background: var(--surface);
+
+    color: var(--text);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    transition:
+        border-color 0.25s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 
 input:focus,
 select:focus,
 textarea:focus {
-
-    border-color: #2563eb;
-
+    border-color: var(--accent);
 }
-
 
 
 textarea {
-
     min-height: 130px;
 
     resize: vertical;
-
 }
 
 
+/* ==============================
+   AI RESULT
+================================= */
 
-/* AI Result */
+#result {
+    min-height: 300px;
+}
+
 
 #output {
+    background: var(--surface);
 
-    background: white;
+    color: var(--text);
 
-    padding: 30px;
+    padding: 35px;
 
     border-radius: 20px;
 
     min-height: 250px;
 
-    white-space: pre-wrap;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
 
     font-size: 16px;
 
+    line-height: 1.8;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 
+/* AI HEADINGS */
 
-/* About */
+#output h1,
+#output h2,
+#output h3 {
+    color: var(--accent);
+
+    margin-top: 25px;
+
+    margin-bottom: 12px;
+}
+
+
+#output h1 {
+    font-size: 28px;
+}
+
+
+#output h2 {
+    font-size: 24px;
+
+    text-align: left;
+}
+
+
+#output h3 {
+    font-size: 20px;
+}
+
+
+#output p {
+    max-width: none;
+
+    margin: 10px 0;
+
+    text-align: left;
+
+    color: var(--text);
+}
+
+
+#output ul {
+    margin: 10px 0 20px 25px;
+
+    padding-left: 20px;
+}
+
+
+#output li {
+    margin-bottom: 8px;
+
+    color: var(--text);
+}
+
+
+#output strong {
+    color: var(--accent);
+}
+
+
+#output hr {
+    border: none;
+
+    border-top:
+        1px solid var(--text-muted);
+
+    margin: 25px 0;
+
+    opacity: 0.4;
+}
+
+
+/* ==============================
+   GENERAL CARDS
+================================= */
+
+.card {
+    background: var(--surface);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    margin: 25px auto;
+
+    max-width: 900px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+.card h2 {
+    text-align: left;
+
+    margin-bottom: 10px;
+
+    font-size: 26px;
+
+    color: var(--accent);
+}
+
+
+.card p {
+    max-width: none;
+
+    text-align: left;
+
+    margin: 0;
+
+    color: var(--text-muted);
+}
+
+
+/* ==============================
+   SAMPLE WORKOUTS
+================================= */
+
+#sample-workouts {
+    text-align: center;
+}
+
+
+#sample-workouts .card {
+    border-top:
+        5px solid var(--accent);
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-top-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+#sample-workouts .card:hover {
+    transform: translateY(-8px);
+
+    border-top-color:
+        var(--accent-light);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.20);
+}
+
+
+#sample-workouts .card h2 {
+    color: var(--accent);
+
+    margin-top: 0;
+}
+
+
+#sample-workouts .card p {
+    color: var(--text-muted);
+}
+
+
+#sample-workouts .card small {
+    color: var(--accent);
+
+    font-size: 12px;
+}
+
+
+/* ==============================
+   SAMPLE MEALS
+================================= */
+
+#sample-meals {
+    text-align: center;
+}
+
+
+#sample-meals .card {
+    border-top:
+        5px solid var(--accent);
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-top-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+#sample-meals .card:hover {
+    transform: translateY(-8px);
+
+    border-top-color:
+        var(--accent-light);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.20);
+}
+
+
+#sample-meals .card h2 {
+    color: var(--accent);
+
+    margin-top: 0;
+}
+
+
+#sample-meals .card p {
+    color: var(--text-muted);
+}
+
+
+#sample-meals .card small {
+    color: var(--accent);
+
+    font-size: 12px;
+}
+
+
+/* ==============================
+   ABOUT
+================================= */
 
 #about p {
-
     max-width: 850px;
 
     margin: auto;
 
     text-align: center;
 
-    color: #64748b;
-
+    color: var(--text-muted);
 }
 
 
+/* ==============================
+   CONTACT
+================================= */
 
-/* Footer */
+#contact {
+    min-height: 60vh;
+}
+
+
+.contact-box {
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    background: var(--surface);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+}
+
+
+.contact-box p {
+    margin-bottom: 15px;
+}
+
+
+.contact-box a {
+    color: var(--accent);
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+.contact-box a:hover {
+    color: var(--accent-light);
+}
+
+
+/* ==============================
+   FOOTER
+================================= */
 
 footer {
-
-    background: #0f172a;
+    background: var(--header-bg);
 
     color: white;
 
@@ -317,139 +680,155 @@ footer {
 
     padding: 25px;
 
+    transition:
+        background-color 0.3s ease;
 }
 
 
+footer p {
+    color: white;
 
-/* Mobile */
-
-@media(max-width:768px){
-
-    header .container {
-
-        flex-direction: column;
-
-        gap: 15px;
-
-    }
-
-
-    nav {
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-
-    }
-
-
-    .hero h2 {
-
-        font-size: 36px;
-
-    }
-
+    margin: 0;
 }
 
-/* Animations */
+
+/* ==============================
+   THEME TOGGLE
+================================= */
+
+.theme-toggle {
+    background: transparent;
+
+    border:
+        2px solid var(--accent);
+
+    padding: 8px 12px;
+
+    font-size: 18px;
+
+    color: white;
+
+    border-radius: 8px;
+}
+
+
+.theme-toggle:hover {
+    background: var(--accent);
+
+    color: var(--header-bg);
+
+    transform: translateY(-2px);
+}
+
+
+/* ==============================
+   ANIMATIONS
+================================= */
 
 .hero,
 form,
 #output,
-.card {
-
-    animation: fadeUp 0.8s ease;
-
+.card,
+.contact-box {
+    animation:
+        fadeUp 0.8s ease;
 }
 
 
 @keyframes fadeUp {
 
     from {
-
         opacity: 0;
 
-        transform: translateY(30px);
-
+        transform:
+            translateY(30px);
     }
-
 
     to {
-
         opacity: 1;
 
-        transform: translateY(0);
+        transform:
+            translateY(0);
+    }
+}
 
+
+/* ==============================
+   TABLET
+================================= */
+
+@media (max-width: 768px) {
+
+    header .container {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    section h2 {
+        font-size: 30px;
+    }
+
+    .card {
+        padding: 25px;
     }
 
 }
 
 
-/* Dark Mode */
+/* ==============================
+   SMALL PHONES
+================================= */
 
-body.dark {
+@media (max-width: 500px) {
 
-    background: #020617;
+    header h1 {
+        font-size: 26px;
+    }
 
-    color: white;
+    .logo img {
+        width: 120px;
+    }
 
-}
+    nav {
+        gap: 10px;
+    }
 
+    nav a {
+        font-size: 14px;
+    }
 
-body.dark header {
+    .hero {
+        padding: 70px 20px;
+    }
 
-    background: #020617;
+    .hero h2 {
+        font-size: 32px;
+    }
 
-}
+    form {
+        padding: 25px;
+    }
 
+    #output {
+        padding: 25px;
+    }
 
-body.dark .hero {
-
-    background: #0f172a;
-
-}
-
-
-body.dark .hero h2,
-body.dark section h2 {
-
-    color: white;
-
-}
-
-
-body.dark .hero p,
-body.dark #about p {
-
-    color: #cbd5e1;
-
-}
-
-
-body.dark form,
-body.dark #output,
-body.dark .card {
-
-    background: #1e293b;
-
-    color: white;
-
-}
-
-
-body.dark input,
-body.dark select,
-body.dark textarea {
-
-    background: #334155;
-
-    color: white;
-
-}
-
-
-body.dark footer {
-
-    background: #020617;
+    #sample-workouts .card,
+    #sample-meals .card {
+        padding: 20px;
+    }
 
 }
