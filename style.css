@@ -832,3 +832,69 @@ form,
     }
 
 }
+
+/* ==============================
+   LOADING SCREEN
+============================== */
+
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    background: rgba(248, 250, 252, 0.96);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(6px);
+}
+
+.loading-screen.active {
+    display: flex;
+}
+
+.loading-box {
+    width: min(90%, 420px);
+    padding: 40px 30px;
+    background: var(--surface);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.loading-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.loading-box h2 {
+    margin: 15px 0 8px;
+}
+
+.loading-box p {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.loader {
+    width: 45px;
+    height: 45px;
+    margin: 10px auto 20px;
+    border: 5px solid #e2e8f0;
+    border-top: 5px solid var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Dark mode */
+
+body.dark .loading-screen {
+    background: rgba(15, 23, 42, 0.96);
+}
