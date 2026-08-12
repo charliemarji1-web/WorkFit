@@ -2,11 +2,16 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { GoogleGenAI } from "@google/genai";
+import path from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+
+// Get the current folder
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // ==============================
 // MIDDLEWARE
@@ -16,7 +21,7 @@ app.use(cors());
 app.use(express.json());
 
 // Serve HTML, CSS, JavaScript, and images
-app.use(express.static("."));
+app.use(express.static(__dirname));
 
 // ==============================
 // GEMINI SETUP
@@ -31,7 +36,7 @@ const ai = new GoogleGenAI({
 // ==============================
 
 app.get("/", (req, res) => {
-    res.sendFile("index.html", { root: "." });
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
 // ==============================
@@ -102,11 +107,8 @@ Rules:
 `;
 
         const response = await ai.models.generateContent({
-
             model: "gemini-2.5-flash",
-
             contents: prompt
-
         });
 
         res.json({
@@ -126,13 +128,7 @@ Rules:
 });
 
 // ==============================
-// START SERVER
+// VERCEL
 // ==============================
 
-app.listen(PORT, () => {
-
-    console.log(
-        `WorkFit server running at http://localhost:${PORT}`
-    );
-
-});
+export default app;
